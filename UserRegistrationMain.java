@@ -5,15 +5,18 @@ public class UserRegistrationMain {
 
 	static String fName;
 	static String lName;
+	static String email;
+	
 	public static void main(String[] args) {
 
 		System.out.println("Welcome in the User Registration Validation System!!!!");
 		
-		// UC2 As a User need to enter a valid Last Name
-		//- First name starts with Cap and has minimum 3 characters
-
-		UserDetail user1 = new UserDetail(fName, lName);
+		//UC3  to enter a valid email - E.g. abc.xyz@bl.co.in - 
+		
+		UserDetail user1 = new UserDetail(fName, lName , email);
+		
 		user1.validateUserInput();
+		
 		
 		
 	}
