@@ -2,20 +2,18 @@ package com.userregistration;
 
 
 public class UserRegistrationMain {
-
-	static String fName;
-	static String lName;
-	static String email;
 	
 	public static void main(String[] args) {
 
 		System.out.println("Welcome in the User Registration Validation System!!!!");
 		
-		//UC3  to enter a valid email - E.g. abc.xyz@bl.co.in - 
+		//UC4 to follow pre-defined Mobile Format - E.g. 91 9919819801 
+		//- Country code follow by space and 10 digit number
 		
-		UserDetail user1 = new UserDetail(fName, lName , email);
+		UserDetail user1 = new UserDetail();
 		
 		user1.validateUserInput();
+	
 		
 		
 		

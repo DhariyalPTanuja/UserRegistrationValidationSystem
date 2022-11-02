@@ -6,9 +6,13 @@ public class UserDetail {
 	String firstname;
 	String lastname;
 	String email;
+	String phonenumber;
 
 	Scanner scanobj = new Scanner(System.in);
 
+	public UserDetail() {
+		
+	}
 	public UserDetail(String firstname, String lastname, String email) {
 		super();
 		this.firstname = firstname;
@@ -49,17 +53,26 @@ public class UserDetail {
 	}
 
 	public void validateUserInput() {
-		System.out.println("Enter the first name: ");
-		String fName = scanobj.next();
-		patternMatching(fName);
-		System.out.println("Enter the Last name: ");
-		String lName = scanobj.next();
-		patternMatching(lName);
-		System.out.println("Enter the email address: ");
-		String email = scanobj.next();
-		emailMatching(email);
+//		System.out.println("Enter the first name: ");
+//		 String fName = scanobj.next();
+//		patternMatching(fName);
+//		System.out.println("Enter the Last name: ");
+//		String lName = scanobj.next();
+//		patternMatching(lName);
+//		System.out.println("Enter the email address: ");
+//		String email = scanobj.next();
+//		emailMatching(email);
+		System.out.println("Enter the Phone Number: ");
+		String phonenumber = scanobj.next();
+		phoneMatchingPattern(phonenumber);
 	}
 
+	private void phoneMatchingPattern(String phonenumber) {
+		String regex = "^\\+[0-9]{1,3}\\[7-9]{1}[0-9]{9}$";
+		//String regex = "^+(0/91)?[7-9]{1}[0-9]{9}";
+		boolean regexResult = phonenumber.matches(regex);
+		checkValid(regexResult);
+	}
 	private void emailMatching(String email) {
 		String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
 		boolean regexResult = email.matches(regex);
