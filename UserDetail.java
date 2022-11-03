@@ -55,18 +55,18 @@ public class UserDetail {
 	}
 
 	public void validateUserInput() {
-//		System.out.println("Enter the first name: ");
-//		String fName = scanobj.next();
-//		patternMatching(fName);
-//		System.out.println("Enter the Last name: ");
-//		String lName = scanobj.next();
-//		patternMatching(lName);
-//		System.out.println("Enter the email address: ");
-//		String email = scanobj.next();
-//		emailMatching(email);
-//		System.out.println("Enter the Phone Number: ");
-//		String phonenumber = scanobj.next();
-//		phoneMatchingPattern(phonenumber);
+		System.out.println("Enter the first name: ");
+		String fName = scanobj.next();
+		patternMatching(fName);
+		System.out.println("Enter the Last name: ");
+		String lName = scanobj.next();
+		patternMatching(lName);
+		System.out.println("Enter the email address: ");
+		String email = scanobj.next();
+		emailMatching(email);
+		System.out.println("Enter the Phone Number: ");
+		String phonenumber = scanobj.next();
+		phoneMatchingPattern(phonenumber);
 		System.out.println("Enter the Password: ");
 		String password = scanobj.next();
 		passwordMatchingPattern(password);
@@ -75,9 +75,8 @@ public class UserDetail {
 
 	private void passwordMatchingPattern(String password) {
 
-
 		//String regex = "^[A-Za-z0-9]{8,}$";
-		String regex = "^([A-Za-z0-9])(?=.*[A-Z]).{8,}$";
+		String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.{8,}).*$";
 		boolean regexResult = password.matches(regex);
 		checkValid(regexResult);
 	}
