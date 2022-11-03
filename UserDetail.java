@@ -76,21 +76,21 @@ public class UserDetail {
 	private void passwordMatchingPattern(String password) {
 
 		//String regex = "^[A-Za-z0-9]{8,}$";
-		String regex = "^(?=.*[A-Z])(?=.*[0-9])(?=.{8,}).*$";
-		boolean regexResult = password.matches(regex);
+		String regexPassword ="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&])(?=.{8,}).*$";
+		boolean regexResult = password.matches(regexPassword);
 		checkValid(regexResult);
 	}
 
 	private void phoneMatchingPattern(String phonenumber) {
-		String regex = "^\\+[0-9]{1,3}\\[7-9]{1}[0-9]{9}$";
-		// String regex = "^+(0/91)?[7-9]{1}[0-9]{9}";
-		boolean regexResult = phonenumber.matches(regex);
+		String regexPhone = "^\\+[0-9]{1,3}\\[7-9]{1}[0-9]{9}$";
+		// String regexPhone = "^+(0/91)?[7-9]{1}[0-9]{9}";
+		boolean regexResult = phonenumber.matches(regexPhone);
 		checkValid(regexResult);
 	}
 
 	private void emailMatching(String email) {
-		String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-		boolean regexResult = email.matches(regex);
+		String regexEmail = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+		boolean regexResult = email.matches(regexEmail);
 		checkValid(regexResult);
 
 	}
